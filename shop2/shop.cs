@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace shop
+namespace shop2
 {
     public class shop
     {
@@ -83,14 +83,14 @@ namespace shop
             string rapprString = "shop name: " + this.shopName + "\n";
             rapprString += "shop city: " + this.shopCity + "\n";
             rapprString += "shop address: " + this.shopAddress + "\n";
-            rapprString += "product: \n";
+            rapprString += "n civic: " + shopCivicNUmber + "\n;";
 
-            foreach (Product productScan in ProductList)
-            {
+           foreach (Product productScan in ProductList)
+           {
                 rapprString += " - " + productScan.GetProductString() + "\n";
-            }
+           }
 
-            rapprString += "\n";
+            
 
             return rapprString;
         }

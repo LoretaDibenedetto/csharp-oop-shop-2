@@ -7,7 +7,7 @@ using System.Text;
 
 
 
-namespace shop
+namespace shop2
 {
     public class Product//: shop
     {
@@ -18,7 +18,7 @@ namespace shop
         private float price;
 
         //Costruttore
-        public Product(string nameProduct, string descriptionProduct, bool onSale, float price)// : base(shopName, shopCity, shopAddress, shopCivicNUmber)
+        public Product(string nameProduct, string descriptionProduct, bool onSale, float price) //: base(shopName, shopCity, shopAddress, shopCivicNUmber)
         {
 
             this.nameProduct = nameProduct;
