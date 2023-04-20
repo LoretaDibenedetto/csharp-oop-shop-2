@@ -9,7 +9,7 @@ using System.Text;
 
 namespace shop
 {
-    public class Product: shop
+    public class Product//: shop
     {
         private string nameProduct;
         private string descriptionProduct;
@@ -18,7 +18,7 @@ namespace shop
         private float price;
 
         //Costruttore
-        public Product(string nameProduct, string descriptionProduct, bool onSale, float price, string shopName, string shopCity, string shopAddress, int shopCivicNUmber) : base(shopName, shopCity, shopAddress, shopCivicNUmber)
+        public Product(string nameProduct, string descriptionProduct, bool onSale, float price)// : base(shopName, shopCity, shopAddress, shopCivicNUmber)
         {
 
             this.nameProduct = nameProduct;
@@ -29,6 +29,8 @@ namespace shop
 
 
         }
+
+      
 
         //Getters setters
 
@@ -87,8 +89,8 @@ namespace shop
 
         public string GetProductString()
         {
-            string rapprString = "Nome del prodotto: " + this.nameProduct + ", ";
-            rapprString += "Description: " + this.descriptionProduct + ", ";
+            string rapprString = "Nome del prodotto : " + this.nameProduct + ", ";
+            rapprString += "Description : " + this.descriptionProduct + ", ";
             rapprString += "Prezzo: " + this.price + ", ";
             rapprString += "Barcode: " + this.barCode + ", ";
             rapprString += "Is on sale? " + this.onSale + ", ";
