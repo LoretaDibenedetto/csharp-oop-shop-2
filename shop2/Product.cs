@@ -9,7 +9,7 @@ using System.Text;
 
 namespace shop2
 {
-    public class Product//: shop
+    public class Product
     {
         private string nameProduct;
         private string descriptionProduct;
@@ -18,7 +18,7 @@ namespace shop2
         private float price;
 
         //Costruttore
-        public Product(string nameProduct, string descriptionProduct, bool onSale, float price) //: base(shopName, shopCity, shopAddress, shopCivicNUmber)
+        public Product(string nameProduct, string descriptionProduct, bool onSale, float price ) 
         {
 
             this.nameProduct = nameProduct;
@@ -94,8 +94,7 @@ namespace shop2
             rapprString += "Prezzo: " + this.price + ", ";
             rapprString += "Barcode: " + this.barCode + ", ";
             rapprString += "Is on sale? " + this.onSale + ", ";
-
-            return rapprString;
+           return rapprString;
         }
 
 

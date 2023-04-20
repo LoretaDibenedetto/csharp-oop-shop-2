@@ -10,15 +10,16 @@ namespace shop2
 {
     public class water:Product 
     {
+        private int numberBottle;
         private int liters;
         private int baleOfWater;
         private bool isSparklingWater;
 
      //costruttore
 
-     public water( int liters, bool isSparklingWater, string nameProduct, string descriptionProduct, bool onSale, float price, int v) : base(nameProduct, descriptionProduct, onSale, price ) 
+     public water( int liters,int numberBottle, bool isSparklingWater, string nameProduct, string descriptionProduct, bool onSale, float price) : base(nameProduct, descriptionProduct, onSale, price ) 
      { 
-        
+        this.numberBottle = numberBottle;
         this.liters = liters;
         baleOfWater = baleOfWater; 
         this.isSparklingWater = isSparklingWater;
@@ -26,6 +27,12 @@ namespace shop2
       }
 
      //get set
+
+     public int Numberbottle
+        {
+            get { return numberBottle; }
+            set { this.numberBottle = value;}
+        }
      public int Liters
         {
             get { return liters; }set { liters = value; }
@@ -47,7 +54,16 @@ namespace shop2
             
             return isSparklingWater = false;
         }
-
+        //methods
+        public void addToCart(int numberBottle)
+        {
+            
+            this.numberBottle++;
+        }
+        public void removeToCart(int numerBottle)
+        {
+            numerBottle--;
+        }
         public string strrappresentation()
         {
          string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
