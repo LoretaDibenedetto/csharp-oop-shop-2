@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,7 +78,7 @@ namespace shop2
 
         }
 
-        public string strRappresetation()
+        public override string ToString()
         {
             string rapprString = "shop name: " + this.shopName + "\n";
             rapprString += "shop city: " + this.shopCity + "\n";
@@ -87,7 +87,7 @@ namespace shop2
 
            foreach (Product productScan in ProductList)
            {
-                rapprString += " - " + productScan.GetProductString() + "\n";
+                rapprString += " - " + productScan.ToString() + "\n";
            }
 
             
@@ -100,4 +100,3 @@ namespace shop2
 
     }
 }
-*/

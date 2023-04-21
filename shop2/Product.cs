@@ -87,7 +87,7 @@ namespace shop2
 
 
 
-        public virtual string GetProductString()
+        public override string ToString()   
         {
             string rapprString = "Nome del prodotto : " + this.nameProduct + ", ";
             rapprString += "Description : " + this.descriptionProduct + ", ";

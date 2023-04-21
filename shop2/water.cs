@@ -64,9 +64,9 @@ namespace shop2
         {
             numerBottle--;
         }
-        public override string GetProductString()
+        public override string ToString()
         {
-         string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
+            string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
             strrappresentation += "Descrizione:" +"  " + this.DescriptionProduct + ", ";
             strrappresentation += "Litri della bottiglia" + "  " + this.liters + ", ";
             strrappresentation += "E' frizzante?" + "  " +  this.isSparklingWater + ", ";
@@ -74,6 +74,9 @@ namespace shop2
             strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + ". ";
             return strrappresentation;
         }
+        
+        
+        
         
 
 
