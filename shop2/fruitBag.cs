@@ -54,7 +54,7 @@ namespace shop2
                 Console.WriteLine("Il sacchetto di frutta è pieno. Non puoi aggiungere ulteriori pezzi di frutta.");
             }
         }
-        public string strappresentation()
+        public override string GetProductString()
         {   
             string strrappresentation = "Nome del prodotto:" + "  " + this.NameProduct + ", ";
             strrappresentation += "Descrizione:" + "  " + this.DescriptionProduct + ", ";

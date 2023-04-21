@@ -64,7 +64,7 @@ namespace shop2
         {
             numerBottle--;
         }
-        public string strrappresentation()
+        public override string GetProductString()
         {
          string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
             strrappresentation += "Descrizione:" +"  " + this.DescriptionProduct + ", ";

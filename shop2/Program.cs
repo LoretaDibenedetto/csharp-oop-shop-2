@@ -12,10 +12,10 @@ fruitBag fruittella = new fruitBag(6, "fruittella", "bella bella", true, 200);
 
 santanna.addToCart(23);
 fruittella.addFruit(3);
-Console.WriteLine(santanna.strrappresentation()); 
+Console.WriteLine(santanna.GetProductString()); 
 Console.WriteLine(newProduct1.GetProductString());
 
-Console.WriteLine(fruittella.strappresentation());
+Console.WriteLine(fruittella.GetProductString());
 
 
 //water santAnna = new water(2,true,"acqua fresca", "descrizione fantasiosa", true, 45, 3);
