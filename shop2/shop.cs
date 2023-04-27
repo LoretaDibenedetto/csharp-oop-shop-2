@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace shop2
 {
-    public class shop
+    public class Shop
     {
         //ATTRIBUTI
         private string shopName;
@@ -18,7 +18,7 @@ namespace shop2
 
 
         //COSTRUTTORE
-        public shop(string shopName, string shopCity, string shopAddress, int shopCivicNUmber)
+        public Shop(string shopName, string shopCity, string shopAddress, int shopCivicNUmber)
         {
 
             this.shopName = shopName;

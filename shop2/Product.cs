@@ -75,7 +75,10 @@ namespace shop2
         {
             return this.onSale;
         }
-
+        public static int GetTotalGeneratedProducts()
+        {
+            return numberOfGeneratedProduct;
+        }
         //setters
         public bool SetOnSale()
         {
