@@ -10,7 +10,8 @@ Console.WriteLine();
 
 //Shop carrefour = new Shop("carrefour","catania","via andria", 45);
 try { 
-Water santanna = new Water( 1, 3, true, 0f , "acqua sant anna", "acqua molto buona", true,  1.4f ,"acqua naturale");
+Water santanna = new Water( 1.4f , 1.5f, 1 , true, 1.4f , "acqua sant anna", "acqua molto buona", true,  1.4f ,"acqua naturale");
+    santanna.drink(10.5f);
 //Fruit banane = new Fruit("banane", "banane siciliane", true, 45.5f, "frutta", "africana");
 Console.WriteLine(santanna.ToString());
 }
