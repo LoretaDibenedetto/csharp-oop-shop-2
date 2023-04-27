@@ -25,10 +25,14 @@ namespace shop2
         this.maxCapacity = maxCapacity;
         this.numberBottle = numberBottle;
         this.liters = initialLiters;
-        this.pH = pH;
+        
             if(pH == 0|| pH < 0)
             {
                 throw new Exception("non va bene bro");
+            }
+            else 
+            {
+                this.pH = pH;
             }
            
             baleOfWater = baleOfWater; 
