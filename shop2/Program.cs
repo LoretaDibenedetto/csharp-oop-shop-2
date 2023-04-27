@@ -5,13 +5,11 @@ using shop2;
 
 Console.WriteLine();
 
-Product newProduct1 = new Product("genere alimentare", "descrizione1", true, 3.0f);
+Product newProduct1 = new Product("genere alimentare", "descrizione1", true, 3.0f, "salume ");
 
-water santanna = new water( 23,34, true, "acqua sant anna", "acqua molto buona", true,  23f);
-fruitBag fruittella = new fruitBag(6, "fruittella", "bella bella", true, 200);
+Water santanna = new Water( 1, 3, true, 1.3f , "acqua sant anna", "acqua molto buona", true,  2.3f ,"acqua naturale");
+Fruit fruittella = new Fruit("banane", "banane siciliane", true, 45.5f, "frutta", "africana");
 
-santanna.addToCart(23);
-fruittella.addFruit(3);
 Console.WriteLine(santanna.ToString()); 
 Console.WriteLine(newProduct1.ToString());
 

@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace shop2
 {
-    public class water:Product 
+    public class Water:Product 
     {
         private int numberBottle;
         private int liters;
         private int baleOfWater;
         private bool isSparklingWater;
+        private float pH;
 
      //costruttore
 
-     public water( int liters,int numberBottle, bool isSparklingWater, string nameProduct, string descriptionProduct, bool onSale, float price) : base(nameProduct, descriptionProduct, onSale, price ) 
+     public Water( int liters,int numberBottle, bool isSparklingWater,float pH, string nameProduct, string descriptionProduct, bool onSale, float price, string categoryName) : base(nameProduct, descriptionProduct, onSale, price, categoryName ) 
      { 
         this.numberBottle = numberBottle;
         this.liters = liters;
-        baleOfWater = baleOfWater; 
+        this.pH = pH;
+            baleOfWater = baleOfWater; 
         this.isSparklingWater = isSparklingWater;
 
       }
@@ -47,6 +49,10 @@ namespace shop2
         {
             return this.isSparklingWater;
         }
+        public float GetpH()
+        {
+            return this.pH;
+        }
 
         //setters
         public bool Setsparkiling()
@@ -55,21 +61,14 @@ namespace shop2
             return isSparklingWater = false;
         }
         //methods
-        public void addToCart(int numberBottle)
-        {
-            
-            this.numberBottle++;
-        }
-        public void removeToCart(int numerBottle)
-        {
-            numerBottle--;
-        }
+       
         public override string ToString()
         {
             string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
             strrappresentation += "Descrizione:" +"  " + this.DescriptionProduct + ", ";
             strrappresentation += "Litri della bottiglia" + "  " + this.liters + ", ";
             strrappresentation += "E' frizzante?" + "  " +  this.isSparklingWater + ", ";
+            strrappresentation += "ph: " + "  " + this.pH + ",";
             strrappresentation += "Prezzo"+"  " + this.Price + ", "; 
             strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + ". ";
             return strrappresentation;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -10,15 +11,21 @@ using System.Text;
 namespace shop2
 {
     public class Product
+
     {
+
+        private static int numberOfGeneratedProduct = 0;
+
+
         private string nameProduct;
         private string descriptionProduct;
         private int barCode;
         private bool onSale;
         private float price;
+        private protected Category category;
 
         //Costruttore
-        public Product(string nameProduct, string descriptionProduct, bool onSale, float price ) 
+        public Product(string nameProduct, string descriptionProduct, bool onSale, float price, string categoryName ) 
         {
 
             this.nameProduct = nameProduct;
@@ -26,8 +33,9 @@ namespace shop2
             this.barCode = GenerateCode();
             this.onSale = onSale;
             this.price = price;
+            this.category = new Category(categoryName);
 
-
+            numberOfGeneratedProduct++;
         }
 
       
@@ -94,6 +102,7 @@ namespace shop2
             rapprString += "Prezzo: " + this.price + ", ";
             rapprString += "Barcode: " + this.barCode + ", ";
             rapprString += "Is on sale? " + this.onSale + ", ";
+            rapprString += "category: " + this.category.ToString();
            return rapprString;
         }
 

@@ -1,72 +1,60 @@
-﻿using shop2;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace shop2
 {
-    public class fruitBag:Product
+    public class FruitBag: Product
     {
-        //attributi
-        private int fruitpieces;
-       
+        private int maxNumberFruits;
+        private List<Fruit> fruitsInBag;
 
-        public fruitBag(int fruipieces, string nameProduct, string descriptionProduct, bool onSale, float price): base(nameProduct, descriptionProduct, onSale, price)
+        public FruitBag(int maxNumberFruits , string nameProduct, string descriptionProduct, bool onSale, float price, string categoryName) : base(nameProduct, descriptionProduct, onSale, price, categoryName)
+        {
+        this.maxNumberFruits = maxNumberFruits;
+        this.fruitsInBag = new List<Fruit>();
+        
+        
+        
+        }
+
+        public int getMaxNumberFruits() {  return maxNumberFruits; }
+
+        public List<Fruit> GetFruitsInBag() {  return fruitsInBag; }
+
+
+        public void AddFruitInBag(Fruit newfruit) 
         { 
-        
-        this.fruitpieces = fruipieces;
-        
-        
+            this.fruitsInBag.Add(newfruit);
+
         }
 
-        public int Fruitpieces
+        public void RemoveFruitInBag(Fruit fruitRemoved)
         {
-            get { return this.fruitpieces; }
-            set { this.fruitpieces = value;  }
-        }
-        //metodi
 
-        public void addBoxFruit(int quantity)
-        {
-            this.fruitpieces += quantity;
-            if (this.fruitpieces > 230)
-            {
-                Console.WriteLine("ne hai aggiunti troppi lasciane un po' per tutti");
-                
-            }else if (this.fruitpieces < 0)
-            {
-                Console.WriteLine("aggiungi qualche box di frutta nel carrello prima di passare per la cassa!");
-            }
+            this.fruitsInBag.Remove(fruitRemoved);
         }
 
-        public void addFruit(int quantity)
-        {
-            if (fruitpieces + quantity <= 5)
-            {
-                fruitpieces += quantity;
-                Console.WriteLine("Hai aggiunto " + quantity + " pezzi di frutta a ");
-            }
-            else
-            {
-                Console.WriteLine("Il sacchetto di frutta è pieno. Non puoi aggiungere ulteriori pezzi di frutta.");
-            }
+
+
+        public void ClearFruitsInBag()
+        {  
+            this.fruitsInBag.Clear(); 
         }
         public override string ToString()
         {
-             
-            string strrappresentation = "Nome del prodotto:" + "  " + this.NameProduct + ", ";
-            strrappresentation += "Descrizione:" + "  " + this.DescriptionProduct + ", ";
-            strrappresentation += "pezzi di frutta" + "  " + this.fruitpieces+ ", ";
-            
-            strrappresentation += "Prezzo" + "  " + this.Price + ", ";
-            strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + ". ";
-            return strrappresentation;
+           string str = base.ToString();
+            str += "type of bag; :" + this.maxNumberFruits + "\n";
+            str += "fruit contained: " + "\n";
+            foreach (Fruit fruitpiked in this.fruitsInBag)
+            {
+                 str += fruitpiked.ToString();
+            }
+            return str;
         }
-        
-        
+
 
     }
 }
