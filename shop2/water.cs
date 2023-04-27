@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +25,7 @@ namespace shop2
      {
         this.maxCapacity = maxCapacity;
         this.numberBottle = numberBottle;
-        this.liters = initialLiters;
+            this.liters = initialLiters;
         
             if(pH == 0|| pH < 0)
             {
@@ -88,12 +89,12 @@ namespace shop2
             { 
             
             this.liters = this.liters - litersToDrink;
-            Console.WriteLine("hai bevuto: " +  litersToDrink + "ora ne rimangono " + this.liters);
+            Console.WriteLine("hai bevuto: " +  litersToDrink +" litro" + " ora ne rimangono " + this.liters);
 
             }
             else
             {
-                liters = 0;
+               // liters = 0;
                 throw new Exception("non puoi bere cosi tanto");
                 
             }
@@ -102,6 +103,7 @@ namespace shop2
         public  double ConvertInGallons(double liters)
         {
             const double litrersForGallons = 3.785;
+           
             return liters / litrersForGallons;
         }
 
@@ -119,22 +121,22 @@ namespace shop2
                 Console.WriteLine("Hai aggiunto: " + litersToPutIntoBottle + "L" + " ora ci sono " + this.liters);
 
             }
-            else
+            else if(litersToPutIntoBottle > this.maxCapacity)
             {
                 
                 liters = maxCapacity;
-                throw new Exception("stai riempiendo troppo fratello");
+                throw new Exception("stai riempiendo troppo l'acqua fratello");
             }
         }
 
         public override string ToString()
         {
-            string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";
-            strrappresentation += "Descrizione:" +"  " + this.DescriptionProduct + ", ";
-            strrappresentation += "Litri della bottiglia" + "  " + this.liters + ", ";
-            strrappresentation += "E' frizzante?" + "  " +  this.isSparklingWater + ", ";
-            strrappresentation += "ph: " + "  " + this.pH + ",";
-            strrappresentation += "Prezzo"+"  " + this.Price + ", "; 
+            string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + "\n ";
+            strrappresentation += "Descrizione:" +"  " + this.DescriptionProduct + "\n ";
+            strrappresentation += "Litri della bottiglia" + "  " + this.liters + "\n ";
+            strrappresentation += "E' frizzante?" + "  " +  this.isSparklingWater + "\n ";
+            strrappresentation += "ph: " + "  " + this.pH + "\n ";
+            strrappresentation += "Prezzo"+"  " + this.Price + "\n "; 
             strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + ". ";
             return strrappresentation;
         }

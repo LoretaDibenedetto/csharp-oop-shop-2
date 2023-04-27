@@ -23,7 +23,7 @@ namespace shop2
         
         }
 
-        public string TypeOfFruit
+        public string GetTypeOfFruit
         {
             get { return this.typeOfFruit; }
         }
@@ -35,14 +35,14 @@ namespace shop2
        
         public override string ToString()
         {
-             
-            string strrappresentation = "Nome del prodotto:" + "  " + this.NameProduct + ", ";
-            strrappresentation += "Descrizione:" + "  " + this.DescriptionProduct + ", ";
-            strrappresentation += "tipo di frutta" + "  " + this.typeOfFruit + ", ";
+             string strrappresentation = "---------------------------------------------" + "\n";
+             strrappresentation += "Nome del prodotto:" + "  " + this.NameProduct + "\n ";
+            strrappresentation += "Descrizione:" + "  " + this.DescriptionProduct + "\n ";
+            strrappresentation += "tipo di frutta" + "  " + this.typeOfFruit + "\n ";
             
-            strrappresentation += "Prezzo" + "  " + this.Price + ", ";
-            strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + ", ";
-            strrappresentation += "categoria :" + "  " + this.category+ ". ";
+            strrappresentation += "Prezzo" + "  " + this.Price + "\n ";
+            strrappresentation += "E' in sconto?" + "  " + this.GetOnSale() + "\n ";
+            strrappresentation += "categoria :" + "  " + this.category+ "\n ";
             return strrappresentation;
         }
         

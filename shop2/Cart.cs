@@ -29,13 +29,13 @@ namespace shop2
         {
             return numberOfGeneratedCart;
         }
-        // SETTERS
-
-        // METHODS
         public int GetNUmbersOfProductsInCart()
         {
             return productsInCart.Count;
         }
+        // SETTERS
+
+        // METHODS
 
         public void AddProduct(Product newProduct)
         {
@@ -50,8 +50,15 @@ namespace shop2
         }
 
         public void EmptyCart()
-        {
-            this.productsInCart.Clear();
+        {   if(productsInCart.Count == 0)
+            {
+                throw new Exception("non puoi svuotare il carrello perche' e' gia' vuoto" );
+            }
+            else
+            {
+               this.productsInCart.Clear();
+
+            }
         }
 
         public override string ToString()

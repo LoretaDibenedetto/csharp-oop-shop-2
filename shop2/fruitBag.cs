@@ -20,15 +20,19 @@ namespace shop2
         
         }
 
-        public int getMaxNumberFruits() {  return maxNumberFruits; }
+        public int getMaxNumberFruits() 
+        {  return maxNumberFruits; }
 
-        public List<Fruit> GetFruitsInBag() {  return fruitsInBag; }
+        public List<Fruit> GetFruitsInBag() 
+        {  return fruitsInBag; }
 
 
-        public void AddFruitInBag(Fruit newfruit) 
-        { 
-            this.fruitsInBag.Add(newfruit);
-
+        public void AddFruitInBag(Fruit newFruit)
+        {
+            if (this.fruitsInBag.Count < maxNumberFruits)
+            {
+                this.fruitsInBag.Add(newFruit);
+            }
         }
 
         public void RemoveFruitInBag(Fruit fruitRemoved)
@@ -36,11 +40,18 @@ namespace shop2
 
             this.fruitsInBag.Remove(fruitRemoved);
         }
-
+        public void AddListOfFruitInbag(List<Fruit> newFruitList)
+        {
+            foreach (Fruit newFruitListToAdd in newFruitList)
+            {
+                this.AddFruitInBag(newFruitListToAdd);
+            }
+        }
 
 
         public void ClearFruitsInBag()
         {  
+             
             this.fruitsInBag.Clear(); 
         }
         public override string ToString()
@@ -55,6 +66,6 @@ namespace shop2
             return str;
         }
 
-
+        
     }
 }
