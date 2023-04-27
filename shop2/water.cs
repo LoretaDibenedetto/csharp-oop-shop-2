@@ -23,6 +23,11 @@ namespace shop2
         this.numberBottle = numberBottle;
         this.liters = liters;
         this.pH = pH;
+            if(pH == 0|| pH < 0)
+            {
+                throw new Exception("non va bene bro");
+            }
+           
             baleOfWater = baleOfWater; 
         this.isSparklingWater = isSparklingWater;
 
@@ -61,7 +66,8 @@ namespace shop2
             return isSparklingWater = false;
         }
         //methods
-       
+      
+
         public override string ToString()
         {
             string strrappresentation = "Nome del prodotto:"+"  " + this.NameProduct + ", ";

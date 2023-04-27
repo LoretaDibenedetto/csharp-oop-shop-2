@@ -8,6 +8,7 @@ namespace shop2
 {
     public class Cart
     {
+        private static int numberOfGeneratedCart = 0;
         private List<Product> productsInCart;
         private int maxProductsInCart;
 
@@ -16,6 +17,7 @@ namespace shop2
         {
             this.maxProductsInCart = maxProductsInCart;
             this.productsInCart = new List<Product>();
+            numberOfGeneratedCart++;
         }
 
         // GETTERS
@@ -23,7 +25,10 @@ namespace shop2
         {
             return this.productsInCart;
         }
-
+        public static int getTotalGenerateCart()
+        {
+            return numberOfGeneratedCart;
+        }
         // SETTERS
 
         // METHODS
@@ -34,7 +39,7 @@ namespace shop2
 
         public void AddProduct(Product newProduct)
         {
-            if (productsInCart.Count < maxProductsInCart)
+            if(productsInCart.Count < maxProductsInCart)
             {
                 this.productsInCart.Add(newProduct);
             }
