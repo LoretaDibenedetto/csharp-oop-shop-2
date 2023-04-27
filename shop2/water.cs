@@ -30,12 +30,10 @@ namespace shop2
             {
                 throw new Exception("non va bene bro");
             }
-            else 
-            {
+            
                 this.pH = pH;
-            }
            
-            baleOfWater = baleOfWater; 
+            baleOfWater = baleOfWater = 6; 
         this.isSparklingWater = isSparklingWater;
           
             
@@ -54,7 +52,7 @@ namespace shop2
         }
      public int BaleOfWater
         {
-            get { return baleOfWater; }set { baleOfWater = 6; }
+            get { return baleOfWater; }
         }
 
         //getters
