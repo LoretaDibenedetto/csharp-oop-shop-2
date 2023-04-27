@@ -10,6 +10,7 @@ namespace shop2
 {
     public class Water:Product 
     {
+       static private double litrersForGallons = 3.785;
         private float maxCapacity;
         private int numberBottle;
         private float liters;
@@ -32,7 +33,8 @@ namespace shop2
            
             baleOfWater = baleOfWater; 
         this.isSparklingWater = isSparklingWater;
-
+          
+            
       }
 
      //get set
@@ -52,6 +54,10 @@ namespace shop2
         }
 
         //getters
+        public static double GetConvertGallions()
+        {
+            return litrersForGallons;
+        }
         public bool Getsparkling()
         {
             return this.isSparklingWater;
@@ -88,6 +94,34 @@ namespace shop2
                 liters = 0;
                 throw new Exception("non puoi bere cosi tanto");
                 
+            }
+        }
+
+        public  double ConvertInGallons(double liters)
+        {
+            const double litrersForGallons = 3.785;
+            return liters / litrersForGallons;
+        }
+
+
+
+
+
+
+
+        public void Fill(float litersToPutIntoBottle)
+        {
+            if ((litersToPutIntoBottle + liters) <= this.maxCapacity)
+            {
+                this.liters += litersToPutIntoBottle;
+                Console.WriteLine("Hai aggiunto: " + litersToPutIntoBottle + "L" + " ora ci sono " + this.liters);
+
+            }
+            else
+            {
+                
+                liters = maxCapacity;
+                throw new Exception("stai riempiendo troppo fratello");
             }
         }
 
